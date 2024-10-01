@@ -4,58 +4,39 @@
 //
 //  Created by Reem Alotaibi on 26/03/1446 AH.
 //
-
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+        ZStack {
+            // الصورة الأولى
+            addImageView(imageName: "IshaButton", width: 100, height: 100)
+                .offset(x: 0, y: 0) // الموقع الأصلي
+
+            // الصورة الثانية فوق الأولى
+            addImageView(imageName: "GreenBlockIsha", width: 100, height: 100)
+                .offset(x: 100, y: 100) // تحريك الصورة لأعلى بمقدار 50 نقطة
+
+            // الصورة الثالثة تحت الأولى
+            addImageView(imageName: "AlfajerButton", width: 100, height: 100)
+                .offset(x: 0, y: 50) // تحريك الصورة لأسفل بمقدار 50 نقطة
         }
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
-        }
+    //كود عشان يكون حكم الاستس مضبوط
+    func addImageView(imageName: String, width: CGFloat, height: CGFloat) -> some View {
+        Image(imageName)
+            .resizable()
+            .scaledToFit()
+            .frame(width: width, height: height)
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+
+
+
+//كود اظهار السيميليتور الجانبي
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

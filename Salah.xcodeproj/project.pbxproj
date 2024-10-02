@@ -15,6 +15,7 @@
 		8B120E362CA9ABEF00E82423 /* SalahTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B120E352CA9ABEF00E82423 /* SalahTests.swift */; };
 		8B120E402CA9ABEF00E82423 /* SalahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B120E3F2CA9ABEF00E82423 /* SalahUITests.swift */; };
 		8B120E422CA9ABEF00E82423 /* SalahUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B120E412CA9ABEF00E82423 /* SalahUITestsLaunchTests.swift */; };
+		8B7463542CACA14800481E8C /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7463532CACA14800481E8C /* PopUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		8B120E3B2CA9ABEF00E82423 /* SalahUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalahUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B120E3F2CA9ABEF00E82423 /* SalahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahUITests.swift; sourceTree = "<group>"; };
 		8B120E412CA9ABEF00E82423 /* SalahUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B7463532CACA14800481E8C /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		8B120E212CA9ABEE00E82423 /* Salah */ = {
 			isa = PBXGroup;
 			children = (
+				8B7463532CACA14800481E8C /* PopUp.swift */,
 				8B120E222CA9ABEE00E82423 /* SalahApp.swift */,
 				8B120E242CA9ABEE00E82423 /* ContentView.swift */,
 				8B120E262CA9ABEE00E82423 /* Item.swift */,
@@ -262,6 +265,7 @@
 			files = (
 				8B120E252CA9ABEE00E82423 /* ContentView.swift in Sources */,
 				8B120E272CA9ABEE00E82423 /* Item.swift in Sources */,
+				8B7463542CACA14800481E8C /* PopUp.swift in Sources */,
 				8B120E232CA9ABEE00E82423 /* SalahApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

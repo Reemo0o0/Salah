@@ -5,7 +5,6 @@
 //  Created by Reem Alotaibi on 26/03/1446 AH.
 //
 import SwiftUI
-
 struct ContentView: View {
     var body: some View {
         ZStack {

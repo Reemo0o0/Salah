@@ -5,110 +5,97 @@
 //  Created by Reem Alotaibi on 29/03/1446 AH.
 // Reem : this class will be the Pop Up the Ui and Action
 
+//  PopUp.swift
+//  Salah
+//
+//  Created by Reem Alotaibi on 29/03/1446 AH.
+// Reem : this class will be the Pop Up the Ui and Action
+
 import Foundation
 import SwiftUI
 
 struct PopUp : View {
-    @State private var showPopup = false
-    @State private var actionMessage: String = ""
+    @Binding var showPopup: Bool
+    var checkpoint: Int
+    var goal: String
+    var onYesTap: () -> Void
+    var onNoTap: () -> Void
 
     var body: some View {
-        VStack {
-            Button(action: {
-                showPopup.toggle()
+        ZStack {
+            // Dimmed background
+            //Color.black.opacity(0.4)
+              //  .edgesIgnoringSafeArea(.all)
+            Image("PopUpG")
+                               .resizable()
+                               .scaledToFit()
+                               .frame(height: 320)
+                             //  .background(in: Shape, fillStyle: FillStyle(color: .black.opacity(0.4)))
+            
+            
+            VStack(spacing: 210) {
+               
+
+              //  Text("Checkpoint \(checkpoint + 1): ؟ '\(goal)'. هل صليت")
+                Text(" هل صليت صلاه الفجر ؟")
+                    .font(.headline)
+                    .foregroundColor(.brown)
+                    .bold()
+                    .position(x: 190, y: 380)
+                    .shadow(color: .white.opacity(0.9), radius: 3, x: 2, y: 2)
+
+               
+                HStack(spacing: 70) {
+               
+                   Button(action: {
+                        onNoTap() // Handle No action
+                   }) {
+                        Image("Angry No") // Replace with your No button image asset
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 80) // Adjust size as needed
+                            .shadow(color: .red.opacity(0.9), radius: 10, x: 2, y: 2)
+                    }
+                       Button(action: {
+                                           onYesTap() // Proceed to next checkpoint
+                                       }) {
+                                           Image("Happy Yes") // Replace with your Yes button image asset
+                                               .resizable()
+                                               .scaledToFit()
+                                               .frame(height: 80) // Adjust size as needed
+                                               .shadow(color: .green.opacity(0.9), radius: 10, x: 2, y: 2)
+                                           
+                                       } //.padding(Alignment( vertical: VerticalAlignment.center),30)
+                }
+
+                Button(action: {
+                   showPopup = false
             }) {
-                Text("Show Popup")
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(9)
+            Image("Close Button")
+                 .resizable()
+                .scaledToFit()
+                .frame(height: 30)
+                .offset(x: 130 , y: -350)
+               }
             }
+            .padding()
+            
 
-            // Display action message
-            Text(actionMessage)
-                .font(.headline)
-                .padding()
-
-            // Popup
-            if showPopup {
-                PopupView(showPopup: $showPopup, onYesTap: {
-                    actionMessage = "You selected Yes!"
-                }, onNoTap: {
-                    actionMessage = "You selected No!"
-                })
-                .transition(.scale)
-               // .animation(.easeInOut)
-            }
         }
-        //.padding()
     }
 }
 
-struct PopupView: View {
-    @Binding var showPopup: Bool
-    var onYesTap: () -> Void
-    var onNoTap: () -> Void
-    
-    var body: some View {
-        VStack{
-                
-                VStack {
-                    
-                   // Text(" هل صليت الفجر ؟")
-                       // .font(.headline)
-                     //   .foregroundColor(.black)
-                      //  .position( x: -40, y: 100)
-                        
-                    
-                    HStack {
-                        Button(action: {
-                            onYesTap() // Call the Yes button action
-                            showPopup = false
-                        }) {
-                            Image("happy yes ") // Replace with your Yes button image asset
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 100, height: 50) // Adjust size as needed
-                        }
-                        
-                    //    Button(action: {
-                    //    onNoTap() // Call the No button action
-                     //      showPopup = false
-                   //     })
-                   //     {
-                   //       Image("Angry No") // Replace with your No button image asset
-                   //           .resizable()
-                   //          .scaledToFit()
-                   //         frame(width: 100, height: 50) // Adjust size as needed
-                   //         .position( x: 100, y: -50)
-
-                  //  }
-                    }
-                    
-                    Button(action: {
-                        showPopup = false
-                    }) {
-                        Image("closer Button") // Replace with your image asset name
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                            .cornerRadius(30)
-                        
-                    } }
-               .padding()
-            Image("Pop Up") // Replace with your image asset name
-                .resizable()
-                .scaledToFit()
-                .frame(height: 600)
-                .position( x: 200, y: -50)
-               // .cornerRadius(12)
-               .shadow(radius: 10)
-               //.padding(40)
-                       }}
-        }
     
 
 struct PopUp_Previews: PreviewProvider {
-    static var previews: some View {
-        PopUp()
-    }}
+@State static var showPopup = true
+    
+static var previews: some View {
+       PopUp(
+            showPopup: $showPopup,
+           checkpoint: 0,
+  goal: "Your goal here",
+        onYesTap: { print("Yes tapped") },
+           onNoTap: { print("No tapped") }
+     )
+    } }

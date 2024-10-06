@@ -16,6 +16,7 @@
 		8B120E402CA9ABEF00E82423 /* SalahUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B120E3F2CA9ABEF00E82423 /* SalahUITests.swift */; };
 		8B120E422CA9ABEF00E82423 /* SalahUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B120E412CA9ABEF00E82423 /* SalahUITestsLaunchTests.swift */; };
 		8B7463542CACA14800481E8C /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7463532CACA14800481E8C /* PopUp.swift */; };
+		E1A324322CB2B1B0006BD305 /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A324312CB2B1B0006BD305 /* AppStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		8B120E3F2CA9ABEF00E82423 /* SalahUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahUITests.swift; sourceTree = "<group>"; };
 		8B120E412CA9ABEF00E82423 /* SalahUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalahUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8B7463532CACA14800481E8C /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		E1A324312CB2B1B0006BD305 /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				8B7463532CACA14800481E8C /* PopUp.swift */,
 				8B120E222CA9ABEE00E82423 /* SalahApp.swift */,
 				8B120E242CA9ABEE00E82423 /* ContentView.swift */,
+				E1A324312CB2B1B0006BD305 /* AppStorage.swift */,
 				8B120E262CA9ABEE00E82423 /* Item.swift */,
 				8B120E282CA9ABEF00E82423 /* Assets.xcassets */,
 				8B120E2A2CA9ABEF00E82423 /* Preview Content */,
@@ -219,6 +222,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 8B120E162CA9ABEE00E82423;
 			productRefGroup = 8B120E202CA9ABEE00E82423 /* Products */;
@@ -267,6 +271,7 @@
 				8B120E272CA9ABEE00E82423 /* Item.swift in Sources */,
 				8B7463542CACA14800481E8C /* PopUp.swift in Sources */,
 				8B120E232CA9ABEE00E82423 /* SalahApp.swift in Sources */,
+				E1A324322CB2B1B0006BD305 /* AppStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,8 +441,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,8 +469,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
